@@ -221,6 +221,24 @@ section{padding-block:64px;border-top:1px solid var(--line)}
 .lote .lp{font-family:var(--mono);font-size:.75rem;color:var(--harvest)}
 .lote p{font-size:.875rem;color:var(--muted)}
 @media (max-width:860px){.lotes{grid-template-columns:1fr 1fr}}
+.split{display:grid;gap:18px}
+.split-bar{display:flex;height:44px;border-radius:4px;overflow:hidden;font-family:var(--mono);font-size:.75rem}
+.split-bar span{display:flex;align-items:center;padding:0 12px;white-space:nowrap;overflow:hidden;min-width:0}
+.sp-fix{background:var(--field);color:var(--bg)}
+.sp-risk{background:var(--harvest);color:var(--bg);justify-content:center}
+.split-nums{display:flex;flex-wrap:wrap;gap:16px 48px}
+.split-nums > div{display:grid;gap:2px}
+.split-nums b{font-family:var(--display);font-size:var(--s5);font-weight:800;font-stretch:90%;line-height:1;font-variant-numeric:tabular-nums;color:var(--field)}
+.split-nums b.risk{color:var(--harvest)}
+.split-nums .unit{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.split-why{max-width:68ch}
+.lsplit{display:flex;flex-wrap:wrap;gap:4px 12px;font-family:var(--mono);font-size:.75rem;color:var(--muted);border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding-block:6px}
+.lsplit em{font-style:normal;color:var(--field);font-variant-numeric:tabular-nums}
+.lsplit .r em{color:var(--harvest)}
+.lote .cond{font-size:.8125rem;color:var(--ink)}
+.lote .cond b{font-family:var(--body);font-size:.8125rem;font-weight:600;color:var(--harvest)}
+.calc .inv{display:flex;justify-content:space-between;gap:12px;font-size:.875rem;border-top:1px dashed var(--line);padding-top:12px}
+.calc .inv b{font-family:var(--mono);font-weight:500;white-space:nowrap}
 .coresp{display:grid;grid-template-columns:1fr 1fr;gap:16px 32px}
 .coresp ul{margin:8px 0 0;padding-left:1.1em;display:grid;gap:6px}
 .coresp > div{min-width:0}

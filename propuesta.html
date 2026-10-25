@@ -15,7 +15,6 @@
     <div class="ruler-label" id="rulerLabel">Mes 0 de 24</div>
     <div class="months" id="months" aria-hidden="true"></div>
     <nav aria-label="Secciones">
-      <a href="index.html" style="background: var(--harvest); color: var(--bg); border-color: var(--harvest); font-weight: 600;">← Infografía</a>
       <a href="#transformacion" data-nav="transformacion">Método</a>
       <a href="#frentes" data-nav="frentes">Frentes</a>
       <a href="#roadmap" data-nav="roadmap">Fases</a>
@@ -177,31 +176,13 @@
   <div class="sec-head rv">
     <div class="eyebrow">Cómo cobrarlo · modelo de negocio</div>
     <h2>Del pago por insumo al pago por resultado</h2>
-    <p>Dejamos de cobrar por licencia o usuario. El valor de referencia de la licitación funciona como fee base pagado por lotes de resultados. Sobre esa base, la relación puede evolucionar hacia una participación en el ahorro validado, acordada entre las partes como componente adicional.</p>
+    <p>Dejamos de cobrar por licencia o usuario. Dentro del contrato, el 15% del valor solo se paga si cada resultado se cumple. Al terminar, Finagro puede optar por un esquema de participación en el ahorro ya validado, sin compromiso previo.</p>
   </div>
   <div class="models rv">
     <div class="model off"><span class="mn">Modelo 1</span><b>INPUT</b><p>Licencia, usuario u hora trabajada. Paga el esfuerzo, no el resultado.</p><span class="pill">No usar</span></div>
     <div class="model"><span class="mn">Modelo 2</span><b>USAGE</b><p>Cobro por documento, consulta o ticket procesado por IA.</p><span class="pill go">Fase 3</span></div>
-    <div class="model"><span class="mn">Modelo 3</span><b>OUTPUT</b><p>Cobro por caso resuelto o por operación calificada.</p><span class="pill go">Fase 3–4</span></div>
-    <div class="model ideal"><span class="mn">Modelo 4</span><b>OUTCOME</b><p>Fee base + % del ahorro validado o % del incremento en colocación.</p><span class="pill">Ideal</span></div>
-  </div>
-
-  <div class="calc rv">
-    <form id="calc" aria-label="Simulador del modelo OUTCOME">
-      <div class="eyebrow">Simulador del componente variable · cifras de ejemplo</div>
-      <label for="base"><span>Costo operativo anual de los procesos intervenidos <em>COP millones</em></span>
-        <input type="number" id="base" min="0" step="500" value="20000"></label>
-      <label for="ahorro"><span>Ahorro validado <output id="ahorroOut">15%</output></span>
-        <input type="range" id="ahorro" min="5" max="40" value="15"></label>
-      <label for="part"><span>Participación del consultor sobre el ahorro <output id="partOut">20%</output></span>
-        <input type="range" id="part" min="5" max="40" value="20"></label>
-    </form>
-    <div class="res" aria-live="polite">
-      <div class="row"><span>Ahorro anual validado para Finagro</span><b id="rAhorro">—</b></div>
-      <div class="row"><span>Componente variable del consultor</span><b id="rVar">—</b></div>
-      <div class="row big"><span>Ahorro que conserva Finagro</span><b id="rNet">—</b></div>
-      <p class="note">Ejemplo: si el ahorro en costo operativo es 15%, el consultor recibe el 20% de ese ahorro. El componente variable es adicional al valor de referencia de COP 7.860 M y se acuerda entre las partes. Las cifras son ilustrativas y se reemplazan por la línea base de la Fase 1.</p>
-    </div>
+    <div class="model"><span class="mn">Modelo 3</span><b>OUTPUT</b><p>Pago por resultado cumplido: aquí, el 15% de cada lote condicionado a su meta.</p><span class="pill go">Dentro del contrato</span></div>
+    <div class="model ideal"><span class="mn">Modelo 4</span><b>OUTCOME</b><p>Fee base + % del ahorro validado o % del incremento en colocación.</p><span class="pill">Opción desde 2029</span></div>
   </div>
 </section>
 
@@ -209,7 +190,7 @@
   <div class="sec-head rv">
     <div class="eyebrow">Valor de la propuesta · modelo tradicional de referencia</div>
     <h2>COP 7.860 millones por 24 meses, IVA incluido</h2>
-    <p>Para participar en la licitación, el proyecto se cotiza con una estructura tradicional de costo directo más AIU. Ese valor se paga por lotes de resultados entregados en cada fase, no contra horas.</p>
+    <p>Para participar en la licitación, el proyecto se cotiza con una estructura tradicional de costo directo más AIU. Ese valor es el techo del contrato: no hay pagos adicionales. Se paga por lotes, y el 15% de cada lote queda condicionado a que su resultado se cumpla.</p>
   </div>
 
   <div class="price rv">
@@ -248,16 +229,71 @@
   </div>
 
   <div class="sec-head rv" style="margin-top:56px;margin-bottom:24px">
+    <div class="eyebrow">Pago fijo y pago en riesgo · 85 / 15</div>
+    <h3 style="font-size:var(--s4)">Finagro paga completo solo si recibe el resultado</h3>
+    <p>El 85% se paga contra los entregables de cada lote. El 15% se libera solo cuando el outcome del lote cumple su meta frente a la línea base medida en la Fase 1.</p>
+  </div>
+  <div class="split rv">
+    <div class="split-bar" role="img" aria-label="Valor total dividido en 85% fijo y 15% condicionado a resultados">
+      <span class="sp-fix" style="flex:85">Fijo por entregables · 85%</span><span class="sp-risk" style="flex:15">En riesgo · 15%</span>
+    </div>
+    <div class="split-nums">
+      <div><span class="eyebrow">Parte fija</span><b>6.681</b><span class="unit">COP M · cubre costo directo, AIU e IVA</span></div>
+      <div><span class="eyebrow">Parte en riesgo</span><b class="risk">1.179</b><span class="unit">COP M · equivale a la utilidad (1.198)</span></div>
+    </div>
+    <p class="split-why">Lo que el consultor pone en riesgo es su propia ganancia, no los costos del proyecto. Si un resultado no se cumple, la operación sigue financiada y el contrato no se desestabiliza. Si se cumple, Finagro paga el valor completo con la evidencia del resultado en la mano.</p>
+  </div>
+
+  <div class="sec-head rv" style="margin-top:56px;margin-bottom:24px">
     <div class="eyebrow">Pago por lotes de resultados</div>
     <h3 style="font-size:var(--s4)">Cada fase se paga contra los outcomes que entrega</h3>
   </div>
   <div class="lotes rv">
-    <div class="lote"><span class="lc">Lote F1 · M1–6</span><b>1.572</b><span class="lp">20%</span><p>Procesos AS-IS levantados, los 3 problemas cuantificados y línea base de madurez.</p></div>
-    <div class="lote"><span class="lc">Lote F2 · M7–12</span><b>1.965</b><span class="lp">25%</span><p>Procesos TO-BE, mapa de outcomes, gobierno del dato y política de IA aprobados.</p></div>
-    <div class="lote"><span class="lc">Lote F3 · M13–18</span><b>2.358</b><span class="lp">30%</span><p>Agentes y modelos en piloto con indicadores de eficiencia medidos contra la línea base.</p></div>
-    <div class="lote"><span class="lc">Lote F4 · M19–24</span><b>1.965</b><span class="lp">25%</span><p>Soluciones escaladas, valor capturado validado y transferencia al equipo de Finagro.</p></div>
+    <div class="lote"><span class="lc">Lote F1 · M1–6</span><b>1.572</b><span class="lp">20% del valor</span>
+      <div class="lsplit"><span>Fijo <em>1.336</em></span><span class="r">En riesgo <em>236</em></span></div>
+      <p>Procesos AS-IS levantados, los 3 problemas cuantificados y línea base de madurez.</p>
+      <p class="cond"><b>Se libera el 15% si:</b> Finagro valida la línea base y aprueba en comité los 3 problemas cuantificados.</p></div>
+    <div class="lote"><span class="lc">Lote F2 · M7–12</span><b>1.965</b><span class="lp">25% del valor</span>
+      <div class="lsplit"><span>Fijo <em>1.670</em></span><span class="r">En riesgo <em>295</em></span></div>
+      <p>Procesos TO-BE, mapa de outcomes, gobierno del dato y política de IA aprobados.</p>
+      <p class="cond"><b>Se libera el 15% si:</b> los datos de los procesos priorizados alcanzan la meta de calidad acordada.</p></div>
+    <div class="lote"><span class="lc">Lote F3 · M13–18</span><b>2.358</b><span class="lp">30% del valor</span>
+      <div class="lsplit"><span>Fijo <em>2.005</em></span><span class="r">En riesgo <em>353</em></span></div>
+      <p>Agentes y modelos en piloto con indicadores de eficiencia medidos contra la línea base.</p>
+      <p class="cond"><b>Se libera el 15% si:</b> los pilotos logran la reducción de tiempos y reprocesos acordada frente a la línea base.</p></div>
+    <div class="lote"><span class="lc">Lote F4 · M19–24</span><b>1.965</b><span class="lp">25% del valor</span>
+      <div class="lsplit"><span>Fijo <em>1.670</em></span><span class="r">En riesgo <em>295</em></span></div>
+      <p>Soluciones escaladas, valor capturado validado y transferencia al equipo de Finagro.</p>
+      <p class="cond"><b>Se libera el 15% si:</b> el ahorro anualizado validado alcanza la meta y la transferencia queda certificada.</p></div>
   </div>
-  <p class="note rv" style="margin-top:12px">COP millones, IVA incluido. Dentro de cada lote los pagos se programan por hitos aprobados.</p>
+  <p class="note rv" style="margin-top:12px">COP millones, IVA incluido. Las metas de cada lote se fijan en la Fase 1 a partir de la línea base y se aprueban en comité. Dentro de cada lote, la parte fija se paga por hitos aprobados.</p>
+
+  <div class="sec-head rv" style="margin-top:56px;margin-bottom:24px">
+    <div class="eyebrow">Retorno de la inversión</div>
+    <h3 style="font-size:var(--s4)">¿En cuántos años se paga sola la consultoría?</h3>
+    <p>La pregunta para Finagro no es cuánto cuesta el proyecto, sino cuánto ahorro necesita para recuperarlo. Ajusta los supuestos con los datos reales de los procesos intervenidos.</p>
+  </div>
+  <div class="calc rv">
+    <form id="calc" aria-label="Cálculo de recuperación de la inversión">
+      <div class="eyebrow">Supuestos · cifras de ejemplo</div>
+      <label for="base"><span>Costo operativo anual de los procesos intervenidos <em>COP millones</em></span>
+        <input type="number" id="base" min="0" step="500" value="20000"></label>
+      <label for="ahorro"><span>Ahorro anual validado <output id="ahorroOut">15%</output></span>
+        <input type="range" id="ahorro" min="1" max="40" value="15"></label>
+      <label for="anios"><span>Años que se sostiene el ahorro <output id="aniosOut">4 años</output></span>
+        <input type="range" id="anios" min="1" max="8" value="4"></label>
+      <div class="inv"><span>Inversión total (techo del contrato)</span><b>COP 7.860 M</b></div>
+    </form>
+    <div class="res" aria-live="polite">
+      <div class="row big"><span>Se paga sola en</span><b id="rPay">—</b></div>
+      <div class="row"><span>Ahorro anual para Finagro</span><b id="rAhorro">—</b></div>
+      <div class="row"><span>Ahorro acumulado en el horizonte</span><b id="rAcum">—</b></div>
+      <div class="row"><span>Beneficio neto después de pagar la consultoría</span><b id="rNet">—</b></div>
+      <div class="row"><span>Retorno por cada peso invertido</span><b id="rRoi">—</b></div>
+      <div class="row"><span>Ahorro mínimo para recuperar la inversión en el horizonte</span><b id="rMin">—</b></div>
+      <p class="note">El plazo se cuenta desde que el ahorro opera. Las cifras son ilustrativas y se reemplazan por la línea base de la Fase 1.</p>
+    </div>
+  </div>
 
   <div class="sec-head rv" style="margin-top:56px;margin-bottom:24px">
     <div class="eyebrow">Co-responsabilidad</div>
@@ -295,7 +331,7 @@
 </section>
 
 <footer>
-  <span>Propuesta de consultoría · Diagnóstico y transformación digital de procesos · Finagro · (JFS - APC)</span>
+  <span>Propuesta de consultoría · Diagnóstico y transformación digital de procesos · Finagro</span>
   <span class="mono">Borrador v1 · octubre 2026</span>
 </footer>
 </div>

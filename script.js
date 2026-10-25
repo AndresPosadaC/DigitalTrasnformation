@@ -75,9 +75,17 @@ if('IntersectionObserver' in window){
 const $=id=>document.getElementById(id);
 const fmt=v=>'COP '+Math.round(v).toLocaleString('es-CO')+' M';
 function calc(){
-  const b=+$('base').value||0,a=+$('ahorro').value,p=+$('part').value;
-  $('ahorroOut').textContent=a+'%';$('partOut').textContent=p+'%';
-  const s=b*a/100,v=s*p/100;
-  $('rAhorro').textContent=fmt(s);$('rVar').textContent=fmt(v);$('rNet').textContent=fmt(s-v);
+  const INV=7860;
+  const b=+$('base').value||0,a=+$('ahorro').value,n=+$('anios').value;
+  $('ahorroOut').textContent=a+'%';$('aniosOut').textContent=n+(n===1?' año':' años');
+  const s=b*a/100,acum=s*n,net=acum-INV;
+  const pay=s>0?INV/s:Infinity;
+  $('rPay').textContent=isFinite(pay)?pay.toLocaleString('es-CO',{maximumFractionDigits:1,minimumFractionDigits:1})+' años':'—';
+  $('rPay').style.color=pay>n?'var(--risk)':'';
+  $('rAhorro').textContent=fmt(s);$('rAcum').textContent=fmt(acum);
+  $('rNet').textContent=fmt(net);$('rNet').style.color=net<0?'var(--risk)':'';
+  $('rRoi').textContent=(acum/INV).toLocaleString('es-CO',{maximumFractionDigits:1,minimumFractionDigits:1})+' pesos';
+  const minS=INV/n;
+  $('rMin').textContent=fmt(minS)+'/año'+(b>0?' ('+(minS/b*100).toLocaleString('es-CO',{maximumFractionDigits:1})+'%)':'');
 }
 $('calc').addEventListener('input',calc);$('calc').addEventListener('submit',e=>e.preventDefault());calc();

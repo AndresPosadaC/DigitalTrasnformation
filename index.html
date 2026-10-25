@@ -2,302 +2,246 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Finagro Procesos 2027–2028</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css">
+<title>Finagro 2027–2028</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
 </head>
 <body>
-<div class="ruler" aria-label="Avance en la línea de tiempo de 24 meses">
-  <div class="ruler-in">
-    <div class="ruler-label" id="rulerLabel">Mes 0 de 24</div>
-    <div class="months" id="months" aria-hidden="true"></div>
-    <nav aria-label="Secciones">
-      <a href="#transformacion" data-nav="transformacion">Método</a>
-      <a href="#frentes" data-nav="frentes">Frentes</a>
-      <a href="#roadmap" data-nav="roadmap">Fases</a>
-      <a href="#servicios" data-nav="servicios">IA</a>
-      <a href="#cobro" data-nav="cobro">Cobro</a>
-      <a href="#valor" data-nav="valor">Valor</a>
-    </nav>
-  </div>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#E2AC45}a:hover{color:#F0C66E}
+</style>
+</helmet>
+<div style="width: 1080px; min-height: 1920px; box-sizing: border-box; padding: 120px 64px 140px; background: #0E2419; color: #EEF3EC; font-family: 'Archivo', 'Arial Narrow', system-ui, sans-serif; display: flex; flex-direction: column; gap: 44px;">
+
+  <header style="display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 22px; letter-spacing: 0.1em; color: #A9BDB0">
+      <span>PROPUESTA · FINAGRO</span><span style="color: {{accent}}">2027 → 2028</span>
+    </div>
+    <h1 style="margin: 0; font-size: 70px; line-height: 0.98; font-weight: 800; font-stretch: 112%; letter-spacing: -0.01em">Diagnóstico y transformación digital de procesos</h1>
+    <div style="display: flex; gap: 28px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 22px; color: #A9BDB0">
+      <span><b style="color: #EEF3EC; font-weight: 600">24</b> meses</span><span><b style="color: #EEF3EC; font-weight: 600">4</b> fases</span><span><b style="color: #EEF3EC; font-weight: 600">11</b> rubros</span><span><b style="color: #EEF3EC; font-weight: 600">11</b> perfiles senior</span>
+    </div>
+  </header>
+
+  <section style="display: grid; grid-template-columns: 1fr 1.9fr 1fr; gap: 12px">
+    <div style="border: 2px solid #24483A; border-radius: 6px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+      <span style="font-size: 52px; font-weight: 800; font-stretch: 70%; line-height: 0.9; color: #5CBF88">01</span>
+      <span style="font-size: 24px; font-weight: 700; font-stretch: 115%">FIND THE MONEY</span>
+      <span style="font-size: 19px; line-height: 1.3; color: #A9BDB0">Los 3 problemas que más dinero cuestan</span>
+    </div>
+    <div style="background: {{accent}}; color: #0E2419; border-radius: 6px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; align-items: baseline; gap: 14px">
+        <span style="font-size: 52px; font-weight: 800; font-stretch: 70%; line-height: 0.9">02</span>
+        <span style="font-size: 26px; font-weight: 800; font-stretch: 115%">MAP THE OUTCOME</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; font-weight: 600">
+        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">GROW</span>
+        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">SCALE</span>
+        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">PROTECT</span>
+        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">LIVE</span>
+        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">TRUST</span>
+      </div>
+      <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; font-weight: 500">CLOUD + SECURITY + DATA + AI</span>
+    </div>
+    <div style="border: 2px solid #24483A; border-radius: 6px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+      <span style="font-size: 52px; font-weight: 800; font-stretch: 70%; line-height: 0.9; color: #5CBF88">03</span>
+      <span style="font-size: 24px; font-weight: 700; font-stretch: 115%">PRICE THE OUTCOME</span>
+      <span style="font-size: 19px; line-height: 1.3; color: #A9BDB0">Cobro por valor, no por hora</span>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 10px">
+    <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 300px; align-items: end; gap: 16px; padding-bottom: 12px; border-bottom: 2px solid #24483A">
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right">
+        <span style="font-size: 56px; font-weight: 800; font-stretch: 90%; line-height: 1; color: #5CBF88">2027</span>
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; color: #A9BDB0">F1 Descubrimiento<br>F2 Rediseño y base de datos</span>
+      </div>
+      <div style="text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; letter-spacing: 0.08em; color: #A9BDB0">% DEL VALOR<br>POR RUBRO</div>
+      <div style="display: flex; flex-direction: column; gap: 2px">
+        <span style="font-size: 56px; font-weight: 800; font-stretch: 90%; line-height: 1; color: {{accent}}">2028</span>
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; color: #A9BDB0">F3 Aceleración con IA<br>F4 Escala y transferencia</span>
+      </div>
+    </div>
+    <sc-for list="{{rubros}}" as="r" hint-placeholder-count="11">
+      <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 300px; align-items: center; gap: 16px; height: 38px">
+        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px">
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; font-weight: 500; color: #EEF3EC">{{r.a}}%</span>
+          <span style="display: block; height: 24px; background: #5CBF88; border-radius: 2px 0 0 2px; width: {{r.aw}}"></span>
+        </div>
+        <div style="text-align: center; font-size: 21px; font-weight: 600; line-height: 1.05; font-stretch: 95%">{{r.n}}</div>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <span style="display: block; height: 24px; background: {{accent}}; border-radius: 0 2px 2px 0; width: {{r.bw}}"></span>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; font-weight: 500; color: #EEF3EC">{{r.b}}%</span>
+        </div>
+      </div>
+    </sc-for>
+    <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 300px; gap: 16px; padding-top: 12px; border-top: 2px solid #24483A; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 24px; font-weight: 600">
+      <span style="text-align: right; color: #5CBF88">54%</span>
+      <span style="text-align: center; color: #A9BDB0; font-weight: 400; font-size: 18px">TOTAL DEL AÑO</span>
+      <span style="color: {{accent}}">46%</span>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; justify-content: space-between; align-items: baseline">
+      <h2 style="margin: 0; font-size: 34px; font-weight: 800; font-stretch: 110%">Equipo y participación</h2>
+      <div style="display: flex; gap: 18px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; color: #A9BDB0">
+        <span><span style="display: inline-block; width: 18px; height: 10px; background: #5CBF88; margin-right: 6px"></span>2027</span>
+        <span><span style="display: inline-block; width: 18px; height: 10px; background: {{accent}}; margin-right: 6px"></span>2028</span>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; row-gap: 12px">
+      <sc-for list="{{equipo}}" as="p" hint-placeholder-count="11">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) 150px; align-items: center; gap: 12px">
+          <span style="font-size: 20px; font-weight: 600; line-height: 1.1">{{p.n}}</span>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="display: block; height: 10px; background: #5CBF88; width: {{p.aw}}"></span>
+            <span style="display: block; height: 10px; background: {{accent}}; width: {{p.bw}}"></span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #A9BDB0">Barra completa = 100% de dedicación en el año</span>
+  </section>
+
+  <section style="border: 2px solid {{accent}}; border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px">
+      <h2 style="margin: 0; font-size: 34px; font-weight: 800; font-stretch: 110%">Cobramos por resultados</h2>
+      <div style="display: flex; gap: 10px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 17px; color: #A9BDB0">
+        <span style="text-decoration: line-through">INPUT</span><span>→ USAGE</span><span>→ OUTPUT</span><span style="color: {{accent}}; font-weight: 600">→ OUTCOME</span>
+      </div>
+    </div>
+    <p style="margin: 0; font-size: 26px; line-height: 1.25">Si ahorramos <b style="color: {{accent}}">{{ahorro}}%</b> del costo operativo, nos llevamos el <b style="color: {{accent}}">{{part}}%</b> de ese ahorro. Finagro conserva el <b style="color: #5CBF88">{{conserva}}%</b>.</p>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <div style="display: flex; height: 34px; border-radius: 3px; overflow: hidden">
+        <span style="display: block; background: #24483A; width: {{restoW}}"></span>
+        <span style="display: block; background: #5CBF88; width: {{finW}}"></span>
+        <span style="display: block; background: {{accent}}; width: {{conW}}"></span>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 17px; color: #A9BDB0">
+        <span>Costo operativo que se mantiene</span><span>Ahorro validado: Finagro · consultor</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; color: #A9BDB0">
+    <span>Andrés Posada · Consultoría en procesos e IA</span>
+    <button onclick="{{openAuth}}" style="background: {{accent}}; color: #0E2419; border: none; border-radius: 4px; padding: 10px 20px; font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 700; cursor: pointer; letter-spacing: 0.05em">
+      VER PROPUESTA COMPLETA →
+    </button>
+  </footer>
+
+  <!-- Modal para ingreso de clave de 6 dígitos -->
+  <sc-if value="{{showModal}}">
+    <div style="position: fixed; inset: 0; background: rgba(14, 36, 25, 0.88); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 9999; font-family: 'Archivo', sans-serif">
+      <div style="background: #153325; border: 2px solid {{accent}}; border-radius: 8px; padding: 36px 40px; width: 440px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5)">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: {{accent}}; letter-spacing: 0.1em">ACCESO RESTRINGIDO</span>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 800; color: #EEF3EC">Ingresa la clave</h3>
+          <p style="margin: 0; font-size: 15px; color: #A9BDB0">Digita la clave numérica de 6 dígitos para consultar el documento detallado.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <input 
+            type="password" 
+            maxlength="6" 
+            inputmode="numeric" 
+            placeholder="······" 
+            value="{{pinInput}}"
+            oninput="{{handlePinInput}}"
+            style="width: 100%; box-sizing: border-box; background: #0E2419; border: 2px solid #24483A; border-radius: 6px; padding: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 28px; text-align: center; color: #EEF3EC; letter-spacing: 0.35em"
+          />
+          <sc-if value="{{authError}}">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F07A52; text-align: center">
+              {{authError}}
+            </span>
+          </sc-if>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 4px">
+          <button onclick="{{closeAuth}}" style="flex: 1; background: transparent; border: 1px solid #24483A; border-radius: 4px; padding: 12px; color: #A9BDB0; font-family: 'IBM Plex Mono', monospace; font-size: 15px; cursor: pointer">
+            Cancelar
+          </button>
+          <button onclick="{{submitAuth}}" style="flex: 1.4; background: {{accent}}; border: none; border-radius: 4px; padding: 12px; color: #0E2419; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 700; cursor: pointer">
+            Ingresar
+          </button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
 </div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#E2AC45","options":["#E2AC45","#5CBF88","#F07A52","#7FB2E5"]},"ahorro":{"editor":"range","min":5,"max":40,"step":1,"unit":"%","default":15},"part":{"editor":"range","min":5,"max":40,"step":1,"unit":"%","default":20},"$preview":{"width":1080,"height":1920}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+      pinInput: '',
+      authError: ''
+    };
+  }
 
-<div class="wrap">
+  renderVals() {
+    // Define aquí la clave numérica de 6 dígitos deseada:
+    const CLAVE_ACCESO = '537291'; // Cambia este valor según tus necesidades
 
-<header class="hero">
-  <div class="eyebrow">Propuesta de consultoría · Finagro · 24 meses</div>
-  <h1>Diagnóstico de procesos y <em>transformación digital</em> con IA</h1>
-  <p class="lede">Identificamos qué procesos de Finagro requieren ajuste, cuánto dinero cuesta cada ineficiencia y cuál es la mejor forma de digitalizarla y automatizarla. El objetivo es la máxima eficiencia operativa, medida en ahorro validado y no en horas entregadas.</p>
-  <div class="facts">
-    <div><b>COP 7.860 M</b><span>IVA incluido</span></div>
-    <div><b>24</b><span>meses de ejecución</span></div>
-    <div><b>4</b><span>fases de 6 meses</span></div>
-    <div><b>11</b><span>rubros de trabajo</span></div>
-    <div><b>7</b><span>frentes de pérdida</span></div>
-    <div><b>3</b><span>fases de transformación</span></div>
-  </div>
-</header>
+    const px = 28;
+    const R = [
+      ['Gobierno de procesos', 10, 6], ['Levantamiento AS-IS', 9, 5], ['Brechas y madurez', 4, 3],
+      ['Diseño TO-BE', 9, 3], ['Datos, nube y seguridad', 7, 6], ['Gobierno de IA', 4, 4],
+      ['Automatización e IA aplicada', 4, 8], ['Gestión de proyectos', 3, 3], ['Gestión del cambio', 2, 3],
+      ['Medición de valor', 1, 3], ['Academia y transferencia', 1, 2]
+    ];
+    const E = [
+      ['Gerente de proyecto', 100, 100], ['Arq. de procesos líder', 100, 75], ['Arquitecto empresarial', 75, 50],
+      ['Analista de procesos', 100, 25], ['Analista financiero Lean', 75, 50], ['Arquitecto de datos', 75, 50],
+      ['Arq. cloud y seguridad', 50, 50], ['Consultor de IA', 50, 75], ['Ingeniero de IA', 25, 100],
+      ['Esp. cambio y formación', 25, 75], ['Diseñador UX', 25, 75]
+    ];
+    const ahorro = this.props.ahorro ?? 15, part = this.props.part ?? 20;
+    const con = ahorro * part / 100, fin = ahorro - con;
 
-<section class="rv">
-  <div class="sec-head">
-    <div class="eyebrow">Alcance</div>
-    <h2>Dos programas que corren en paralelo</h2>
-    <p>Esto no es una sola consultoría. Durante 24 meses corren dos frentes que se alimentan entre sí: uno ordena los procesos y otro les pone datos e IA encima.</p>
-  </div>
-  <div class="twin">
-    <div class="prog a">
-      <div class="pct">60%</div>
-      <h3>Diagnóstico y rediseño de procesos</h3>
-      <ul>
-        <li>Levantamiento AS-IS de la cadena de valor: redescuento, garantías (FAG), incentivos, cartera y atención a intermediarios.</li>
-        <li>Brechas, cuellos de botella y costo económico de cada uno.</li>
-        <li>Modelo TO-BE, gobierno de procesos y gestión del cambio.</li>
-      </ul>
-    </div>
-    <div class="prog b">
-      <div class="pct">40%</div>
-      <h3>Digitalización, automatización e IA</h3>
-      <ul>
-        <li>Capa fundacional: gobierno del dato, lakehouse, nube y seguridad.</li>
-        <li>Agentes, copilots y modelos predictivos aplicados a los procesos priorizados.</li>
-        <li>Gobierno de IA, medición de valor y transferencia al equipo de Finagro.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    return {
+      accent: this.props.accent ?? '#E2AC45',
+      ahorro, part, conserva: 100 - part,
+      rubros: R.map(([n, a, b]) => ({ n, a, b, aw: (a * px) + 'px', bw: (b * px) + 'px' })),
+      equipo: E.map(([n, a, b]) => ({ n, aw: (a * 1.5) + 'px', bw: (b * 1.5) + 'px' })),
+      restoW: (100 - ahorro) + '%', finW: fin + '%', conW: con + '%',
 
-<section id="transformacion">
-  <div class="sec-head rv">
-    <div class="eyebrow">Método de transformación</div>
-    <h2>Primero el dinero, después la tecnología</h2>
-    <p>Tres fases transversales ordenan toda la consultoría. Cada fase del roadmap de 24 meses aplica una o varias de ellas.</p>
-  </div>
+      // Control del modal y autenticación
+      showModal: this.state.showModal,
+      pinInput: this.state.pinInput,
+      authError: this.state.authError,
 
-  <div class="tphase rv">
-    <div class="tnum">01<small>FIND THE MONEY</small></div>
-    <div class="tbody">
-      <h3>Encontrar dónde se pierde el dinero</h3>
-      <p>No empezamos por la IA. Empezamos por el impacto económico: identificamos los tres problemas que más dinero le cuestan hoy a Finagro y les ponemos una cifra de línea base.</p>
-      <div class="money">
-        <div><b>Problema 1</b><span>Costo anual cuantificado, proceso dueño y causa raíz.</span></div>
-        <div><b>Problema 2</b><span>Horas, reprocesos y errores medidos sobre transacciones reales.</span></div>
-        <div><b>Problema 3</b><span>Riesgo o pérdida evitable expresada en pesos.</span></div>
-      </div>
-    </div>
-  </div>
+      openAuth: () => this.setState({ showModal: true, pinInput: '', authError: '' }),
+      closeAuth: () => this.setState({ showModal: false, pinInput: '', authError: '' }),
 
-  <div class="tphase rv">
-    <div class="tnum">02<small>MAP THE OUTCOME</small></div>
-    <div class="tbody">
-      <h3>Convertir cada problema en un resultado de negocio</h3>
-      <p>Cada problema se asigna a uno de cinco resultados. Ese resultado es lo que se compromete y se mide.</p>
-      <div class="outcomes">
-        <div class="oc"><b>GROW</b><span class="k">Crecimiento</span><p>Más colocación y uso de líneas de crédito y garantías.</p></div>
-        <div class="oc"><b>SCALE</b><span class="k">Productividad</span><p>Más operaciones con el mismo equipo y menor costo unitario.</p></div>
-        <div class="oc"><b>PROTECT</b><span class="k">Resiliencia</span><p>Menos fraude, menos incumplimiento y continuidad operativa.</p></div>
-        <div class="oc"><b>LIVE</b><span class="k">Capacidad humana</span><p>Liberar horas administrativas para trabajo de análisis.</p></div>
-        <div class="oc"><b>TRUST</b><span class="k">Confianza en datos</span><p>Una sola versión del dato para decidir y reportar.</p></div>
-      </div>
-      <div class="stack" aria-label="Capacidades habilitadoras"><i>Lo hacen posible:</i><span>CLOUD</span><i>+</i><span>SECURITY</span><i>+</i><span>DATA</span><i>+</i><span>AI</span></div>
-    </div>
-  </div>
+      handlePinInput: (e) => {
+        // Filtra solo números y limita a máximo 6 caracteres
+        const val = e.target.value.replace(/\D/g, '').slice(0, 6);
+        this.setState({ pinInput: val, authError: '' });
+      },
 
-  <div class="tphase rv">
-    <div class="tnum">03<small>PRICE THE OUTCOME</small></div>
-    <div class="tbody">
-      <h3>Cobrar por el valor, no por la hora trabajada</h3>
-      <p>El modelo económico de la consultoría se alinea con el resultado: una parte fija para operar y una parte variable atada al ahorro o al crecimiento validado. El detalle está en la sección <a href="#cobro" style="color:var(--field)">Cómo cobrarlo</a>.</p>
-    </div>
-  </div>
-</section>
-
-<section id="frentes">
-  <div class="sec-head rv">
-    <div class="eyebrow">Qué debemos optimizar</div>
-    <h2>Siete frentes donde más dinero se pierde</h2>
-    <p>El diagnóstico recorre los siete frentes en cada proceso levantado. La eficiencia es la prioridad número uno para IA.</p>
-  </div>
-  <div class="fronts rv">
-    <div class="front"><span class="n">01</span><b>VENTAS</b><p>Bajo crecimiento, conversión de intermediarios, churn y cross-selling de líneas.</p><span class="tag">GROW</span></div>
-    <div class="front"><span class="n">02</span><b>COSTOS</b><p>Costos operativos, headcount e infraestructura.</p><span class="tag">SCALE</span></div>
-    <div class="front top"><span class="n">03</span><b>EFICIENCIA</b><p>Trabajo manual, errores y duplicidades.</p><span class="tag">Prioridad #1 IA</span></div>
-    <div class="front"><span class="n">04</span><b>VELOCIDAD</b><p>Tiempos de respuesta, de decisión y de salida al mercado de nuevos instrumentos.</p><span class="tag">SCALE</span></div>
-    <div class="front"><span class="n">05</span><b>RENTABILIDAD</b><p>Margen y utilización de activos.</p><span class="tag">GROW</span></div>
-    <div class="front"><span class="n">06</span><b>RIESGO</b><p>Fraude, downtime, ciberseguridad y cumplimiento.</p><span class="tag">PROTECT</span></div>
-    <div class="front"><span class="n">07</span><b>CAPACIDAD HUMANA</b><p>Horas administrativas, saturación de equipos y dependencia de personas clave.</p><span class="tag">LIVE</span></div>
-  </div>
-</section>
-
-<section id="roadmap">
-  <div class="sec-head rv">
-    <div class="eyebrow">Roadmap · 24 meses</div>
-    <h2>Cuatro fases, once rubros</h2>
-    <p>La dedicación del equipo es escalonada: cada rubro sube o baja de intensidad según la fase. El porcentaje indica el peso relativo de cada rubro en el valor de la propuesta.</p>
-  </div>
-
-  <div id="phases"></div>
-
-  <div class="rv" style="margin-top:40px">
-    <div class="eyebrow" style="margin-bottom:12px">Vista consolidada · intensidad del equipo por mes</div>
-    <div class="gantt-box"><div class="gantt" id="gantt"></div></div>
-    <div class="legend"><span><i style="background:var(--field)"></i>Alta</span><span><i style="background:color-mix(in srgb,var(--field) 45%,transparent)"></i>Media</span><span><i style="background:color-mix(in srgb,var(--field) 18%,transparent)"></i>Baja</span></div>
-  </div>
-</section>
-
-<section id="servicios">
-  <div class="sec-head rv">
-    <div class="eyebrow">Con qué servicios de IA adoptar</div>
-    <h2>Roadmap de adopción en dos capas</h2>
-    <p>Sin la capa fundacional la IA falla. La capa aplicada solo arranca cuando el dato es confiable.</p>
-  </div>
-  <div class="layers">
-    <div class="layer found rv">
-      <div class="lt"><div class="eyebrow">Capa A</div><h3>Fundacional</h3><p>Meses 4 a 12</p></div>
-      <div class="svc">
-        <div><span class="for">TRUST</span><b>DATA as a Service</b><ul><li>Limpieza y calidad del dato de operaciones, garantías y cartera.</li><li>Gobierno del dato y catálogo.</li><li>Lakehouse como fuente única.</li></ul></div>
-        <div><span class="for">PROTECT</span><b>CLOUD + SECURITY</b><ul><li>Infraestructura elástica.</li><li>Cumplimiento de Habeas Data (Ley 1581), SARLAFT y lineamientos de seguridad de la Superintendencia Financiera.</li></ul></div>
-      </div>
-    </div>
-    <div class="layer rv">
-      <div class="lt"><div class="eyebrow">Capa B</div><h3>IA aplicada</h3><p>Meses 10 a 24</p></div>
-      <div class="svc">
-        <div><span class="for">SCALE + LIVE</span><b>Productividad y capacidad humana</b><ul><li>Agentes para tareas administrativas: validación de solicitudes de redescuento, conciliación con intermediarios, respuesta a PQRS.</li><li>Copilots para los equipos de operaciones, riesgo y jurídica.</li></ul></div>
-        <div><span class="for">GROW</span><b>Crecimiento</b><ul><li>Modelos predictivos de abandono y de propensión de uso de líneas por intermediario y región.</li><li>Scoring y calificación automática de intermediarios y operaciones.</li></ul></div>
-        <div><span class="for">PROTECT + TRUST</span><b>Resiliencia</b><ul><li>Detección de fraude y anomalías en garantías e incentivos.</li><li>Validación inteligente de documentos para reducir devoluciones y reprocesos.</li></ul></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="cobro">
-  <div class="sec-head rv">
-    <div class="eyebrow">Cómo cobrarlo · modelo de negocio</div>
-    <h2>Del pago por insumo al pago por resultado</h2>
-    <p>Dejamos de cobrar por licencia o usuario. El valor de referencia de la licitación funciona como fee base pagado por lotes de resultados. Sobre esa base, la relación puede evolucionar hacia una participación en el ahorro validado, acordada entre las partes como componente adicional.</p>
-  </div>
-  <div class="models rv">
-    <div class="model off"><span class="mn">Modelo 1</span><b>INPUT</b><p>Licencia, usuario u hora trabajada. Paga el esfuerzo, no el resultado.</p><span class="pill">No usar</span></div>
-    <div class="model"><span class="mn">Modelo 2</span><b>USAGE</b><p>Cobro por documento, consulta o ticket procesado por IA.</p><span class="pill go">Fase 3</span></div>
-    <div class="model"><span class="mn">Modelo 3</span><b>OUTPUT</b><p>Cobro por caso resuelto o por operación calificada.</p><span class="pill go">Fase 3–4</span></div>
-    <div class="model ideal"><span class="mn">Modelo 4</span><b>OUTCOME</b><p>Fee base + % del ahorro validado o % del incremento en colocación.</p><span class="pill">Ideal</span></div>
-  </div>
-
-  <div class="calc rv">
-    <form id="calc" aria-label="Simulador del modelo OUTCOME">
-      <div class="eyebrow">Simulador del componente variable · cifras de ejemplo</div>
-      <label for="base"><span>Costo operativo anual de los procesos intervenidos <em>COP millones</em></span>
-        <input type="number" id="base" min="0" step="500" value="20000"></label>
-      <label for="ahorro"><span>Ahorro validado <output id="ahorroOut">15%</output></span>
-        <input type="range" id="ahorro" min="5" max="40" value="15"></label>
-      <label for="part"><span>Participación del consultor sobre el ahorro <output id="partOut">20%</output></span>
-        <input type="range" id="part" min="5" max="40" value="20"></label>
-    </form>
-    <div class="res" aria-live="polite">
-      <div class="row"><span>Ahorro anual validado para Finagro</span><b id="rAhorro">—</b></div>
-      <div class="row"><span>Componente variable del consultor</span><b id="rVar">—</b></div>
-      <div class="row big"><span>Ahorro que conserva Finagro</span><b id="rNet">—</b></div>
-      <p class="note">Ejemplo: si el ahorro en costo operativo es 15%, el consultor recibe el 20% de ese ahorro. El componente variable es adicional al valor de referencia de COP 7.860 M y se acuerda entre las partes. Las cifras son ilustrativas y se reemplazan por la línea base de la Fase 1.</p>
-    </div>
-  </div>
-</section>
-
-<section id="valor">
-  <div class="sec-head rv">
-    <div class="eyebrow">Valor de la propuesta · modelo tradicional de referencia</div>
-    <h2>COP 7.860 millones por 24 meses, IVA incluido</h2>
-    <p>Para participar en la licitación, el proyecto se cotiza con una estructura tradicional de costo directo más AIU. Ese valor se paga por lotes de resultados entregados en cada fase, no contra horas.</p>
-  </div>
-
-  <div class="price rv">
-    <div class="price-hero">
-      <div><span class="eyebrow">Valor total</span><b>7.860</b><span class="unit">COP millones · IVA incluido</span></div>
-      <div><span class="eyebrow">Base antes de IVA</span><b class="sm">6.605</b><span class="unit">7.860 ÷ 1,19</span></div>
-      <div><span class="eyebrow">IVA 19%</span><b class="sm">1.255</b><span class="unit">sobre la base</span></div>
-    </div>
-    <div class="stackbar" role="img" aria-label="Composición del valor total: costo directo 61%, administración 5%, imprevistos 2%, utilidad 15%, IVA 16%">
-      <span class="sb-cd" style="flex:4794">Costo directo</span><span class="sb-a" style="flex:421">A</span><span class="sb-i" style="flex:192">I</span><span class="sb-u" style="flex:1198">U</span><span class="sb-iva" style="flex:1255">IVA</span>
-    </div>
-
-    <div class="ptable-box">
-      <table class="ptable">
-        <thead><tr><th>Concepto</th><th>COP M</th><th>% sobre costo directo</th><th>% del total</th></tr></thead>
-        <tbody>
-          <tr class="grp"><td>Costo directo</td><td>4.794</td><td>100,0%</td><td>61,0%</td></tr>
-          <tr class="sub"><td>Equipo consultor senior, equipo administrativo, herramientas de trabajo y desplazamientos a regiones</td><td></td><td></td><td></td></tr>
-          <tr class="grp"><td>A · Administración</td><td>421</td><td>8,8%</td><td>5,4%</td></tr>
-          <tr class="sub"><td>Pólizas: seriedad, cumplimiento, calidad del servicio, salarios y prestaciones, responsabilidad civil</td><td>70</td><td></td><td></td></tr>
-          <tr class="sub"><td>Asesoría jurídica: contrato, esquema laboral, otrosíes</td><td>90</td><td></td><td></td></tr>
-          <tr class="sub"><td>ICA (≈ 0,97% de la base)</td><td>64</td><td></td><td></td></tr>
-          <tr class="sub"><td>GMF 4×1000</td><td>22</td><td></td><td></td></tr>
-          <tr class="sub"><td>Costo financiero del capital de trabajo</td><td>175</td><td></td><td></td></tr>
-          <tr class="grp"><td>I · Imprevistos</td><td>192</td><td>4,0%</td><td>2,4%</td></tr>
-          <tr class="sub"><td>Ajuste salarial del año 2 y cambios regulatorios (Superfinanciera, IA)</td><td></td><td></td><td></td></tr>
-          <tr class="grp"><td>U · Utilidad</td><td>1.198</td><td>25,0%</td><td>15,2%</td></tr>
-          <tr class="sub"><td>Know-how, coordinación de equipos, EDT y Gantt, gestión del talento humano</td><td></td><td></td><td></td></tr>
-          <tr class="tot"><td>Base antes de IVA</td><td>6.605</td><td>137,8%</td><td>84,0%</td></tr>
-          <tr class="grp"><td>IVA 19%</td><td>1.255</td><td></td><td>16,0%</td></tr>
-          <tr class="tot big"><td>Valor total</td><td>7.860</td><td></td><td>100,0%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note">AIU expresado sobre el costo directo: 37,8%. Los valores de pólizas, ICA y GMF son estimaciones y se ajustan con las cotizaciones de la aseguradora y las condiciones del pliego.</p>
-  </div>
-
-  <div class="sec-head rv" style="margin-top:56px;margin-bottom:24px">
-    <div class="eyebrow">Pago por lotes de resultados</div>
-    <h3 style="font-size:var(--s4)">Cada fase se paga contra los outcomes que entrega</h3>
-  </div>
-  <div class="lotes rv">
-    <div class="lote"><span class="lc">Lote F1 · M1–6</span><b>1.572</b><span class="lp">20%</span><p>Procesos AS-IS levantados, los 3 problemas cuantificados y línea base de madurez.</p></div>
-    <div class="lote"><span class="lc">Lote F2 · M7–12</span><b>1.965</b><span class="lp">25%</span><p>Procesos TO-BE, mapa de outcomes, gobierno del dato y política de IA aprobados.</p></div>
-    <div class="lote"><span class="lc">Lote F3 · M13–18</span><b>2.358</b><span class="lp">30%</span><p>Agentes y modelos en piloto con indicadores de eficiencia medidos contra la línea base.</p></div>
-    <div class="lote"><span class="lc">Lote F4 · M19–24</span><b>1.965</b><span class="lp">25%</span><p>Soluciones escaladas, valor capturado validado y transferencia al equipo de Finagro.</p></div>
-  </div>
-  <p class="note rv" style="margin-top:12px">COP millones, IVA incluido. Dentro de cada lote los pagos se programan por hitos aprobados.</p>
-
-  <div class="sec-head rv" style="margin-top:56px;margin-bottom:24px">
-    <div class="eyebrow">Co-responsabilidad</div>
-    <h3 style="font-size:var(--s4)">Las dos partes construyen el resultado durante el proyecto</h3>
-    <p>Finagro no espera un entregable al final de los 24 meses. Participa en cada lote, y lo que invierte queda como base institucional.</p>
-  </div>
-  <div class="coresp rv">
-    <div><div class="eyebrow">Finagro se compromete a</div><ul>
-      <li>Entregar la información y los datos de los procesos en los tiempos del plan.</li>
-      <li>Asumir la inversión en tecnología: nube, licencias y consumo de plataformas de datos e IA, que quedan como activo propio.</li>
-      <li>Designar dueños de proceso y aprobar cada lote en los comités definidos.</li>
-    </ul></div>
-    <div><div class="eyebrow">El consultor se compromete a</div><ul>
-      <li>Construir sobre la infraestructura que Finagro provee, sin dependencias propietarias.</li>
-      <li>Entregar los outcomes por lotes, con evidencia medible contra la línea base.</li>
-      <li>Documentar y transferir cada solución para que el equipo de Finagro la opere.</li>
-    </ul></div>
-    <div class="cr-res"><b>Resultado</b><p>Menor riesgo de incumplimiento y de cambio de objetivos. Los ajustes que surjan se evalúan y justifican en cada lote sin perder el foco general del programa.</p></div>
-  </div>
-</section>
-
-<section>
-  <div class="sec-head rv">
-    <div class="eyebrow">Por qué este valor</div>
-    <h2>Lo que sostiene la propuesta</h2>
-  </div>
-  <div class="why rv">
-    <div><b>Obligación regulatoria</b><p>Como entidad vigilada por la Superintendencia Financiera, Finagro debe cumplir marcos de riesgo operativo, ciberseguridad, SARLAFT y protección de datos. Automatizar sin gobierno amplía el riesgo en lugar de reducirlo.</p></div>
-    <div><b>Perfiles senior escasos</b><p>Arquitectura de procesos (BPM, Lean Six Sigma), arquitectura empresarial (TOGAF), datos, IA y gestión de proyectos (PMP) con 4 a 8 años mínimos de experiencia. Las tarifas reflejan esa escasez en el mercado colombiano.</p></div>
-    <div><b>Dedicación escalonada por fases</b><p>Cada rol entra con alta intensidad solo en las fases donde aporta. Es un modelo optimizado frente a desplegar el equipo completo al 100% durante 24 meses.</p></div>
-    <div><b>Cobertura de la red de intermediarios</b><p>Los procesos de Finagro dependen de bancos, cooperativas y entidades en las regiones. El levantamiento y la adopción incluyen trabajo con esa red, no solo con la sede en Bogotá.</p></div>
-    <div><b>Transferencia obligatoria</b><p>Cada rubro deja capacidad instalada: procesos documentados, equipos formados y gobierno operando. Esto exige más horas que una consultoría que solo entrega documentos.</p></div>
-    <div><b>AIU sobre frentes móviles</b><p>La Administración, Imprevistos y Utilidad distribuyen el riesgo entre las partes. En 24 meses pueden cambiar las circulares de la Superfinanciera y la regulación de IA, y un imprevisto mal calculado puede desestabilizar el contrato.</p></div>
-  </div>
-</section>
-
-<footer>
-  <span>Propuesta de consultoría · Diagnóstico y transformación digital de procesos · Finagro · (Juan Francisco Schultze - Andrés Posada)</span>
-  <span class="mono">Borrador v1 · octubre 2026</span>
-</footer>
-</div>
-<script src="script.js"></script>
+      submitAuth: () => {
+        if (this.state.pinInput.length !== 6) {
+          this.setState({ authError: 'La clave debe tener 6 dígitos numéricos.' });
+          return;
+        }
+        if (this.state.pinInput === CLAVE_ACCESO) {
+          window.location.href = 'propuesta.html';
+        } else {
+          this.setState({ authError: 'Clave incorrecta. Inténtalo de nuevo.' });
+        }
+      }
+    };
+  }
+}
+</script>
 </body>
 </html>

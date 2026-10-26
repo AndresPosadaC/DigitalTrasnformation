@@ -2,246 +2,275 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Finagro 2027–2028</title>
-<script src="./vendor/react.js"></script>
-<script src="./vendor/react-dom.js"></script>
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
 <style>
-body{margin:0}
-a{color:#E2AC45}a:hover{color:#F0C66E}
-</style>
-</helmet>
-<div style="width: 1080px; min-height: 1920px; box-sizing: border-box; padding: 120px 64px 140px; background: #0E2419; color: #EEF3EC; font-family: 'Archivo', 'Arial Narrow', system-ui, sans-serif; display: flex; flex-direction: column; gap: 44px;">
+/* ===== Ajustes rápidos =====
+   --accent: color dorado de acento (2028, fase 02, componente variable).
+   Los demás datos editables están en CONFIG, en el bloque de script al final del archivo. */
+:root{ --accent:#E2AC45; }
+body{margin:0;background:#0A1A12;display:flex;justify-content:center}
+#story{transform-origin:top center;flex:none}
+.btn-main{background:var(--accent);color:#0E2419;border:none;border-radius:4px;padding:12px 20px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:16px;font-weight:700;letter-spacing:.05em;cursor:pointer;white-space:nowrap}
+.btn-main:hover{filter:brightness(1.08)}
+.btn-ghost{flex:1;background:transparent;border:1px solid #24483A;border-radius:4px;padding:12px;color:#A9BDB0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:15px;cursor:pointer}
+.btn-main:focus-visible,.btn-ghost:focus-visible,#pinInput:focus-visible{outline:2px solid #EEF3EC;outline-offset:2px}
+.modal{position:fixed;inset:0;background:rgba(14,36,25,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;font-family:'Archivo','Arial Narrow',system-ui,sans-serif}
+.modal-box{background:#153325;border:2px solid var(--accent);border-radius:8px;padding:32px 36px;width:440px;max-width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:20px;box-shadow:0 20px 40px rgba(0,0,0,.5);color:#EEF3EC}
+.modal-box h3{margin:0;font-size:26px;font-weight:800}
+.modal-box p{margin:0;font-size:15px;color:#A9BDB0}
+.modal-eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:var(--accent);letter-spacing:.1em}
+#pinInput{width:100%;box-sizing:border-box;background:#0E2419;border:2px solid #24483A;border-radius:6px;padding:14px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:28px;text-align:center;color:#EEF3EC;letter-spacing:.35em}
+.modal-error{min-height:1em;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;color:#F07A52;text-align:center}
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-  <header style="display: flex; flex-direction: column; gap: 14px">
-    <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 22px; letter-spacing: 0.1em; color: #A9BDB0">
-      <span>PROPUESTA · FINAGRO</span><span style="color: {{accent}}">2027 → 2028</span>
+</style>
+</head>
+<body>
+<div id="story" style="width: 1080px; min-height: 1920px; box-sizing: border-box; padding: 92px 60px 120px; background: #0E2419; color: #EEF3EC; font-family: 'Archivo', 'Arial Narrow', system-ui, sans-serif; display: flex; flex-direction: column; gap: 30px">
+
+  <header style="display: flex; flex-direction: column; gap: 12px">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; letter-spacing: 0.1em; color: #A9BDB0">
+      <span>PROPUESTA · FINAGRO</span><span style="color: var(--accent)">2027 → 2028</span>
     </div>
-    <h1 style="margin: 0; font-size: 70px; line-height: 0.98; font-weight: 800; font-stretch: 112%; letter-spacing: -0.01em">Diagnóstico y transformación digital de procesos</h1>
-    <div style="display: flex; gap: 28px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 22px; color: #A9BDB0">
+    <h1 style="margin: 0; font-size: 60px; line-height: 0.98; font-weight: 800; font-stretch: 112%; letter-spacing: -0.01em">Diagnóstico y transformación digital de procesos</h1>
+    <div style="display: flex; gap: 28px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; color: #A9BDB0">
       <span><b style="color: #EEF3EC; font-weight: 600">24</b> meses</span><span><b style="color: #EEF3EC; font-weight: 600">4</b> fases</span><span><b style="color: #EEF3EC; font-weight: 600">11</b> rubros</span><span><b style="color: #EEF3EC; font-weight: 600">11</b> perfiles senior</span>
     </div>
   </header>
 
   <section style="display: grid; grid-template-columns: 1fr 1.9fr 1fr; gap: 12px">
-    <div style="border: 2px solid #24483A; border-radius: 6px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
-      <span style="font-size: 52px; font-weight: 800; font-stretch: 70%; line-height: 0.9; color: #5CBF88">01</span>
-      <span style="font-size: 24px; font-weight: 700; font-stretch: 115%">FIND THE MONEY</span>
-      <span style="font-size: 19px; line-height: 1.3; color: #A9BDB0">Los 3 problemas que más dinero cuestan</span>
+    <div style="border: 2px solid #24483A; border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+      <span style="font-size: 44px; font-weight: 800; font-stretch: 70%; line-height: 0.9; color: #5CBF88">01</span>
+      <span style="font-size: 22px; font-weight: 700; font-stretch: 115%">FIND THE MONEY</span>
+      <span style="font-size: 18px; line-height: 1.25; color: #A9BDB0">Los 3 problemas que más dinero cuestan</span>
     </div>
-    <div style="background: {{accent}}; color: #0E2419; border-radius: 6px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+    <div style="background: var(--accent); color: #0E2419; border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
       <div style="display: flex; align-items: baseline; gap: 14px">
-        <span style="font-size: 52px; font-weight: 800; font-stretch: 70%; line-height: 0.9">02</span>
-        <span style="font-size: 26px; font-weight: 800; font-stretch: 115%">MAP THE OUTCOME</span>
+        <span style="font-size: 44px; font-weight: 800; font-stretch: 70%; line-height: 0.9">02</span>
+        <span style="font-size: 24px; font-weight: 800; font-stretch: 115%">MAP THE OUTCOME</span>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 6px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; font-weight: 600">
-        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">GROW</span>
-        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">SCALE</span>
-        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">PROTECT</span>
-        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">LIVE</span>
-        <span style="padding: 4px 10px; border: 2px solid #0E2419; border-radius: 3px">TRUST</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 17px; font-weight: 600">
+        <span style="padding: 3px 9px; border: 2px solid #0E2419; border-radius: 3px">GROW</span>
+        <span style="padding: 3px 9px; border: 2px solid #0E2419; border-radius: 3px">SCALE</span>
+        <span style="padding: 3px 9px; border: 2px solid #0E2419; border-radius: 3px">PROTECT</span>
+        <span style="padding: 3px 9px; border: 2px solid #0E2419; border-radius: 3px">LIVE</span>
+        <span style="padding: 3px 9px; border: 2px solid #0E2419; border-radius: 3px">TRUST</span>
       </div>
-      <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; font-weight: 500">CLOUD + SECURITY + DATA + AI</span>
+      <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 17px; font-weight: 500">CLOUD + SECURITY + DATA + AI</span>
     </div>
-    <div style="border: 2px solid #24483A; border-radius: 6px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
-      <span style="font-size: 52px; font-weight: 800; font-stretch: 70%; line-height: 0.9; color: #5CBF88">03</span>
-      <span style="font-size: 24px; font-weight: 700; font-stretch: 115%">PRICE THE OUTCOME</span>
-      <span style="font-size: 19px; line-height: 1.3; color: #A9BDB0">Cobro por valor, no por hora</span>
+    <div style="border: 2px solid #24483A; border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+      <span style="font-size: 44px; font-weight: 800; font-stretch: 70%; line-height: 0.9; color: #5CBF88">03</span>
+      <span style="font-size: 22px; font-weight: 700; font-stretch: 115%">PRICE THE OUTCOME</span>
+      <span style="font-size: 18px; line-height: 1.25; color: #A9BDB0">Cobro por valor, no por hora</span>
     </div>
   </section>
 
-  <section style="display: flex; flex-direction: column; gap: 10px">
-    <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 300px; align-items: end; gap: 16px; padding-bottom: 12px; border-bottom: 2px solid #24483A">
+  <section style="display: flex; flex-direction: column; gap: 6px">
+    <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 300px; align-items: end; gap: 16px; padding-bottom: 10px; border-bottom: 2px solid #24483A">
       <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right">
-        <span style="font-size: 56px; font-weight: 800; font-stretch: 90%; line-height: 1; color: #5CBF88">2027</span>
-        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; color: #A9BDB0">F1 Descubrimiento<br>F2 Rediseño y base de datos</span>
+        <span style="font-size: 48px; font-weight: 800; font-stretch: 90%; line-height: 1; color: #5CBF88">2027</span>
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #A9BDB0">F1 Descubrimiento · F2 Rediseño</span>
       </div>
-      <div style="text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; letter-spacing: 0.08em; color: #A9BDB0">% DEL VALOR<br>POR RUBRO</div>
+      <div style="text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.08em; color: #A9BDB0">% DEL VALOR POR RUBRO</div>
       <div style="display: flex; flex-direction: column; gap: 2px">
-        <span style="font-size: 56px; font-weight: 800; font-stretch: 90%; line-height: 1; color: {{accent}}">2028</span>
-        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; color: #A9BDB0">F3 Aceleración con IA<br>F4 Escala y transferencia</span>
+        <span style="font-size: 48px; font-weight: 800; font-stretch: 90%; line-height: 1; color: var(--accent)">2028</span>
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #A9BDB0">F3 Aceleración IA · F4 Escala</span>
       </div>
     </div>
-    <sc-for list="{{rubros}}" as="r" hint-placeholder-count="11">
-      <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 300px; align-items: center; gap: 16px; height: 38px">
-        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px">
-          <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; font-weight: 500; color: #EEF3EC">{{r.a}}%</span>
-          <span style="display: block; height: 24px; background: #5CBF88; border-radius: 2px 0 0 2px; width: {{r.aw}}"></span>
-        </div>
-        <div style="text-align: center; font-size: 21px; font-weight: 600; line-height: 1.05; font-stretch: 95%">{{r.n}}</div>
-        <div style="display: flex; align-items: center; gap: 10px">
-          <span style="display: block; height: 24px; background: {{accent}}; border-radius: 0 2px 2px 0; width: {{r.bw}}"></span>
-          <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; font-weight: 500; color: #EEF3EC">{{r.b}}%</span>
-        </div>
-      </div>
-    </sc-for>
-    <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 300px; gap: 16px; padding-top: 12px; border-top: 2px solid #24483A; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 24px; font-weight: 600">
+    <div id="rubros" style="display: contents"></div>
+    <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 300px; gap: 16px; padding-top: 10px; border-top: 2px solid #24483A; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 22px; font-weight: 600">
       <span style="text-align: right; color: #5CBF88">54%</span>
-      <span style="text-align: center; color: #A9BDB0; font-weight: 400; font-size: 18px">TOTAL DEL AÑO</span>
-      <span style="color: {{accent}}">46%</span>
+      <span style="text-align: center; color: #A9BDB0; font-weight: 400; font-size: 16px">TOTAL DEL AÑO</span>
+      <span style="color: var(--accent)">46%</span>
     </div>
   </section>
 
-  <section style="display: flex; flex-direction: column; gap: 14px">
+  <section style="display: flex; flex-direction: column; gap: 12px">
     <div style="display: flex; justify-content: space-between; align-items: baseline">
-      <h2 style="margin: 0; font-size: 34px; font-weight: 800; font-stretch: 110%">Equipo y participación</h2>
-      <div style="display: flex; gap: 18px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; color: #A9BDB0">
-        <span><span style="display: inline-block; width: 18px; height: 10px; background: #5CBF88; margin-right: 6px"></span>2027</span>
-        <span><span style="display: inline-block; width: 18px; height: 10px; background: {{accent}}; margin-right: 6px"></span>2028</span>
+      <h2 style="margin: 0; font-size: 30px; font-weight: 800; font-stretch: 110%">Equipo y participación</h2>
+      <div style="display: flex; gap: 18px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #A9BDB0">
+        <span><span style="display: inline-block; width: 18px; height: 8px; background: #5CBF88; margin-right: 6px"></span>2027</span>
+        <span><span style="display: inline-block; width: 18px; height: 8px; background: var(--accent); margin-right: 6px"></span>2028</span>
+        <span>barra completa = 100%</span>
       </div>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; row-gap: 12px">
-      <sc-for list="{{equipo}}" as="p" hint-placeholder-count="11">
-        <div style="display: grid; grid-template-columns: minmax(0, 1fr) 150px; align-items: center; gap: 12px">
-          <span style="font-size: 20px; font-weight: 600; line-height: 1.1">{{p.n}}</span>
-          <div style="display: flex; flex-direction: column; gap: 4px">
-            <span style="display: block; height: 10px; background: #5CBF88; width: {{p.aw}}"></span>
-            <span style="display: block; height: 10px; background: {{accent}}; width: {{p.bw}}"></span>
-          </div>
-        </div>
-      </sc-for>
-    </div>
-    <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #A9BDB0">Barra completa = 100% de dedicación en el año</span>
-  </section>
-
-  <section style="border: 2px solid {{accent}}; border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
-    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px">
-      <h2 style="margin: 0; font-size: 34px; font-weight: 800; font-stretch: 110%">Cobramos por resultados</h2>
-      <div style="display: flex; gap: 10px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 17px; color: #A9BDB0">
-        <span style="text-decoration: line-through">INPUT</span><span>→ USAGE</span><span>→ OUTPUT</span><span style="color: {{accent}}; font-weight: 600">→ OUTCOME</span>
-      </div>
-    </div>
-    <p style="margin: 0; font-size: 26px; line-height: 1.25">Si ahorramos <b style="color: {{accent}}">{{ahorro}}%</b> del costo operativo, nos llevamos el <b style="color: {{accent}}">{{part}}%</b> de ese ahorro. Finagro conserva el <b style="color: #5CBF88">{{conserva}}%</b>.</p>
-    <div style="display: flex; flex-direction: column; gap: 8px">
-      <div style="display: flex; height: 34px; border-radius: 3px; overflow: hidden">
-        <span style="display: block; background: #24483A; width: {{restoW}}"></span>
-        <span style="display: block; background: #5CBF88; width: {{finW}}"></span>
-        <span style="display: block; background: {{accent}}; width: {{conW}}"></span>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 17px; color: #A9BDB0">
-        <span>Costo operativo que se mantiene</span><span>Ahorro validado: Finagro · consultor</span>
-      </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; row-gap: 8px">
+      <div id="equipo" style="display: contents"></div>
     </div>
   </section>
 
-  <footer style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 18px; color: #A9BDB0">
+  <section style="border: 2px solid var(--accent); border-radius: 6px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+    <h2 style="margin: 0; font-size: 30px; font-weight: 800; font-stretch: 110%">Un esquema que comparte el compromiso</h2>
+    <p style="margin: 0; font-size: 20px; line-height: 1.35; color: #D3DED6">El valor combina un componente fijo, que financia el desarrollo del proyecto, y un componente variable, ligado a los resultados que Finagro valida en cada fase.</p>
+
+    <div style="display: flex; height: 36px; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; font-weight: 600; color: #0E2419">
+      <span style="display: flex; align-items: center; padding: 0 14px; background: #5CBF88; width: var(--fijoW)">Desarrollo · fijo <span data-v="fijo"></span>%</span>
+      <span style="display: flex; align-items: center; justify-content: center; background: var(--accent); width: var(--variableW)">Resultados <span data-v="variable"></span>%</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+      <div style="background: #143326; border-radius: 6px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; letter-spacing: 0.06em; color: var(--accent)">RESULTADOS ALCANZADOS</span>
+        <span style="font-size: 19px; line-height: 1.3">La consultora recibe la totalidad de la utilidad estimada.</span>
+      </div>
+      <div style="background: #143326; border-radius: 6px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; letter-spacing: 0.06em; color: #A9BDB0">RESULTADOS PARCIALES</span>
+        <span style="font-size: 19px; line-height: 1.3">La utilidad se ajusta en proporción a lo logrado.</span>
+      </div>
+    </div>
+    <p style="margin: 0; font-size: 20px; font-weight: 600; color: var(--accent)">Nuestro mayor incentivo es entregar el mejor trabajo posible.</p>
+
+    <div style="border-top: 1px solid #24483A; padding-top: 14px; display: flex; flex-direction: column; gap: 8px">
+      <p style="margin: 0; font-size: 20px; line-height: 1.3">Con el ahorro que genera, la inversión se recupera en cerca de <b style="color: var(--accent)"><span data-v="recupera"></span> años</b>.</p>
+      <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px">
+        <div id="anios" style="display: contents"></div>
+      </div>
+      <div style="display: flex; gap: 22px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: #A9BDB0">
+        <span><span style="display: inline-block; width: 16px; height: 8px; background: var(--accent); margin-right: 6px"></span>Recuperación de la inversión</span>
+        <span><span style="display: inline-block; width: 16px; height: 8px; background: #5CBF88; margin-right: 6px"></span>Ahorro neto para Finagro</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #A9BDB0">
     <span>Andrés Posada · Consultoría en procesos e IA</span>
-    <button onclick="{{openAuth}}" style="background: {{accent}}; color: #0E2419; border: none; border-radius: 4px; padding: 10px 20px; font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 700; cursor: pointer; letter-spacing: 0.05em">
-      VER PROPUESTA COMPLETA →
-    </button>
+    <button type="button" id="btnPropuesta" class="btn-main">VER PROPUESTA COMPLETA →</button>
   </footer>
-
-  <!-- Modal para ingreso de clave de 6 dígitos -->
-  <sc-if value="{{showModal}}">
-    <div style="position: fixed; inset: 0; background: rgba(14, 36, 25, 0.88); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 9999; font-family: 'Archivo', sans-serif">
-      <div style="background: #153325; border: 2px solid {{accent}}; border-radius: 8px; padding: 36px 40px; width: 440px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5)">
-        <div style="display: flex; flex-direction: column; gap: 6px">
-          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: {{accent}}; letter-spacing: 0.1em">ACCESO RESTRINGIDO</span>
-          <h3 style="margin: 0; font-size: 26px; font-weight: 800; color: #EEF3EC">Ingresa la clave</h3>
-          <p style="margin: 0; font-size: 15px; color: #A9BDB0">Digita la clave numérica de 6 dígitos para consultar el documento detallado.</p>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 8px">
-          <input 
-            type="password" 
-            maxlength="6" 
-            inputmode="numeric" 
-            placeholder="······" 
-            value="{{pinInput}}"
-            oninput="{{handlePinInput}}"
-            style="width: 100%; box-sizing: border-box; background: #0E2419; border: 2px solid #24483A; border-radius: 6px; padding: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 28px; text-align: center; color: #EEF3EC; letter-spacing: 0.35em"
-          />
-          <sc-if value="{{authError}}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F07A52; text-align: center">
-              {{authError}}
-            </span>
-          </sc-if>
-        </div>
-
-        <div style="display: flex; gap: 12px; margin-top: 4px">
-          <button onclick="{{closeAuth}}" style="flex: 1; background: transparent; border: 1px solid #24483A; border-radius: 4px; padding: 12px; color: #A9BDB0; font-family: 'IBM Plex Mono', monospace; font-size: 15px; cursor: pointer">
-            Cancelar
-          </button>
-          <button onclick="{{submitAuth}}" style="flex: 1.4; background: {{accent}}; border: none; border-radius: 4px; padding: 12px; color: #0E2419; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 700; cursor: pointer">
-            Ingresar
-          </button>
-        </div>
-      </div>
-    </div>
-  </sc-if>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#E2AC45","options":["#E2AC45","#5CBF88","#F07A52","#7FB2E5"]},"ahorro":{"editor":"range","min":5,"max":40,"step":1,"unit":"%","default":15},"part":{"editor":"range","min":5,"max":40,"step":1,"unit":"%","default":20},"$preview":{"width":1080,"height":1920}}'>
-class Component extends DCLogic {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showModal: false,
-      pinInput: '',
-      authError: ''
-    };
-  }
+<div id="authModal" class="modal" hidden>
+  <form id="authForm" class="modal-box" role="dialog" aria-modal="true" aria-labelledby="authTitle" novalidate>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span class="modal-eyebrow">ACCESO RESTRINGIDO</span>
+      <h3 id="authTitle">Ingresa la clave</h3>
+      <p>Digita la clave numérica de 6 dígitos para consultar el documento detallado.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <label for="pinInput" class="sr-only">Clave de 6 dígitos</label>
+      <input id="pinInput" type="password" maxlength="6" inputmode="numeric" autocomplete="off" placeholder="······">
+      <span id="authError" class="modal-error" aria-live="polite"></span>
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 4px">
+      <button type="button" id="btnCancel" class="btn-ghost">Cancelar</button>
+      <button type="submit" class="btn-main" style="flex: 1.4">Ingresar</button>
+    </div>
+  </form>
+</div>
 
-  renderVals() {
-    // Define aquí la clave numérica de 6 dígitos deseada:
-    const CLAVE_ACCESO = '537291'; // Cambia este valor según tus necesidades
+<script>
+/* ===== CONFIG: edita aquí los datos de la infografía ===== */
+const CONFIG = {
+  clave: '537291',             // clave numérica de 6 dígitos para ver la propuesta completa
+  destino: 'propuesta.html',   // página que se abre con la clave correcta
+  variable: 15,     // % del valor ligado a resultados (el fijo se calcula como 100 - variable)
+  recupera: 2.6,    // años para recuperar la inversión con el ahorro generado
+  escalaRubro: 26,  // px por cada punto porcentual en las barras de rubros
+  // Rubros: [nombre, % del valor en 2027, % del valor en 2028]
+  rubros: [
+    ['Gobierno de procesos', 10, 6], ['Levantamiento AS-IS', 9, 5], ['Brechas y madurez', 4, 3],
+    ['Diseño TO-BE', 9, 3], ['Datos, nube y seguridad', 7, 6], ['Gobierno de IA', 4, 4],
+    ['Automatización e IA aplicada', 4, 8], ['Gestión de proyectos', 3, 3], ['Gestión del cambio', 2, 3],
+    ['Medición de valor', 1, 3], ['Academia y transferencia', 1, 2]
+  ],
+  // Equipo: [perfil, % de dedicación en 2027, % de dedicación en 2028]
+  equipo: [
+    ['Gerente de proyecto', 100, 100], ['Arq. de procesos líder', 100, 75], ['Arquitecto empresarial', 75, 50],
+    ['Analista de procesos', 100, 25], ['Analista financiero Lean', 75, 50], ['Arquitecto de datos', 75, 50],
+    ['Arq. cloud y seguridad', 50, 50], ['Consultor de IA', 50, 75], ['Ingeniero de IA', 25, 100],
+    ['Esp. cambio y formación', 25, 75], ['Diseñador UX', 25, 75]
+  ]
+};
 
-    const px = 28;
-    const R = [
-      ['Gobierno de procesos', 10, 6], ['Levantamiento AS-IS', 9, 5], ['Brechas y madurez', 4, 3],
-      ['Diseño TO-BE', 9, 3], ['Datos, nube y seguridad', 7, 6], ['Gobierno de IA', 4, 4],
-      ['Automatización e IA aplicada', 4, 8], ['Gestión de proyectos', 3, 3], ['Gestión del cambio', 2, 3],
-      ['Medición de valor', 1, 3], ['Academia y transferencia', 1, 2]
-    ];
-    const E = [
-      ['Gerente de proyecto', 100, 100], ['Arq. de procesos líder', 100, 75], ['Arquitecto empresarial', 75, 50],
-      ['Analista de procesos', 100, 25], ['Analista financiero Lean', 75, 50], ['Arquitecto de datos', 75, 50],
-      ['Arq. cloud y seguridad', 50, 50], ['Consultor de IA', 50, 75], ['Ingeniero de IA', 25, 100],
-      ['Esp. cambio y formación', 25, 75], ['Diseñador UX', 25, 75]
-    ];
-    const ahorro = this.props.ahorro ?? 15, part = this.props.part ?? 20;
-    const con = ahorro * part / 100, fin = ahorro - con;
+/* ===== Construcción (no hace falta editar debajo de esta línea) ===== */
+const mono = "font-family: 'IBM Plex Mono', ui-monospace, monospace";
+const el = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstChild; };
 
-    return {
-      accent: this.props.accent ?? '#E2AC45',
-      ahorro, part, conserva: 100 - part,
-      rubros: R.map(([n, a, b]) => ({ n, a, b, aw: (a * px) + 'px', bw: (b * px) + 'px' })),
-      equipo: E.map(([n, a, b]) => ({ n, aw: (a * 1.5) + 'px', bw: (b * 1.5) + 'px' })),
-      restoW: (100 - ahorro) + '%', finW: fin + '%', conW: con + '%',
+const rub = document.getElementById('rubros');
+CONFIG.rubros.forEach(([n, a, b]) => rub.before(el(`
+  <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 300px; align-items: center; gap: 16px; height: 30px">
+    <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px">
+      <span style="${mono}; font-size: 18px; font-weight: 500; color: #EEF3EC">${a}%</span>
+      <span style="display: block; height: 20px; background: #5CBF88; border-radius: 2px 0 0 2px; width: ${a * CONFIG.escalaRubro}px"></span>
+    </div>
+    <div style="text-align: center; font-size: 19px; font-weight: 600; line-height: 1.05; font-stretch: 95%">${n}</div>
+    <div style="display: flex; align-items: center; gap: 10px">
+      <span style="display: block; height: 20px; background: var(--accent); border-radius: 0 2px 2px 0; width: ${b * CONFIG.escalaRubro}px"></span>
+      <span style="${mono}; font-size: 18px; font-weight: 500; color: #EEF3EC">${b}%</span>
+    </div>
+  </div>`)));
+rub.remove();
 
-      // Control del modal y autenticación
-      showModal: this.state.showModal,
-      pinInput: this.state.pinInput,
-      authError: this.state.authError,
+const eq = document.getElementById('equipo');
+CONFIG.equipo.forEach(([n, a, b]) => eq.before(el(`
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 150px; align-items: center; gap: 12px">
+    <span style="font-size: 18px; font-weight: 600; line-height: 1.1">${n}</span>
+    <div style="display: flex; flex-direction: column; gap: 3px">
+      <span style="display: block; height: 8px; background: #5CBF88; width: ${a * 1.5}px"></span>
+      <span style="display: block; height: 8px; background: var(--accent); width: ${b * 1.5}px"></span>
+    </div>
+  </div>`)));
+eq.remove();
 
-      openAuth: () => this.setState({ showModal: true, pinInput: '', authError: '' }),
-      closeAuth: () => this.setState({ showModal: false, pinInput: '', authError: '' }),
+const an = document.getElementById('anios');
+[1, 2, 3, 4, 5, 6].forEach((n) => {
+  const inv = Math.max(0, Math.min(1, CONFIG.recupera - (n - 1))) * 100;
+  an.before(el(`
+  <div style="display: flex; flex-direction: column; gap: 4px">
+    <div style="display: flex; height: 20px; border-radius: 2px; overflow: hidden">
+      <span style="display: block; background: var(--accent); width: ${inv}%"></span>
+      <span style="display: block; background: #5CBF88; width: ${100 - inv}%"></span>
+    </div>
+    <span style="${mono}; font-size: 14px; color: #A9BDB0">Año ${n}</span>
+  </div>`));
+});
+an.remove();
 
-      handlePinInput: (e) => {
-        // Filtra solo números y limita a máximo 6 caracteres
-        const val = e.target.value.replace(/\D/g, '').slice(0, 6);
-        this.setState({ pinInput: val, authError: '' });
-      },
+const vals = {
+  fijo: 100 - CONFIG.variable,
+  variable: CONFIG.variable,
+  recupera: CONFIG.recupera.toLocaleString('es-CO', { minimumFractionDigits: 1, maximumFractionDigits: 1 })
+};
+document.querySelectorAll('[data-v]').forEach((s) => { s.textContent = vals[s.dataset.v]; });
+const rootStyle = document.documentElement.style;
+rootStyle.setProperty('--fijoW', (100 - CONFIG.variable) + '%');
+rootStyle.setProperty('--variableW', CONFIG.variable + '%');
 
-      submitAuth: () => {
-        if (this.state.pinInput.length !== 6) {
-          this.setState({ authError: 'La clave debe tener 6 dígitos numéricos.' });
-          return;
-        }
-        if (this.state.pinInput === CLAVE_ACCESO) {
-          window.location.href = 'propuesta.html';
-        } else {
-          this.setState({ authError: 'Clave incorrecta. Inténtalo de nuevo.' });
-        }
-      }
-    };
-  }
+/* Escala la infografía al ancho de la pantalla (en celular se ve completa de lado a lado).
+   Para verla a tamaño real (1080 px de ancho) y exportarla, abre la página con ?full al final de la ruta. */
+const story = document.getElementById('story');
+function fit() {
+  if (location.search.includes('full')) return;
+  const k = Math.min(1, innerWidth / 1080);
+  story.style.transform = `scale(${k})`;
+  document.body.style.height = (story.offsetHeight * k) + 'px';
 }
+addEventListener('resize', fit);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+fit();
+
+/* ===== Acceso a la propuesta completa ===== */
+const modal = document.getElementById('authModal');
+const form = document.getElementById('authForm');
+const pin = document.getElementById('pinInput');
+const err = document.getElementById('authError');
+const opener = document.getElementById('btnPropuesta');
+
+function openAuth() { pin.value = ''; err.textContent = ''; modal.hidden = false; pin.focus(); }
+function closeAuth() { modal.hidden = true; opener.focus(); }
+
+opener.addEventListener('click', openAuth);
+document.getElementById('btnCancel').addEventListener('click', closeAuth);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeAuth(); });
+modal.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAuth(); });
+pin.addEventListener('input', () => { pin.value = pin.value.replace(/\D/g, '').slice(0, 6); err.textContent = ''; });
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (pin.value.length !== 6) { err.textContent = 'La clave debe tener 6 dígitos numéricos.'; return; }
+  if (pin.value === CONFIG.clave) { location.href = CONFIG.destino; }
+  else { err.textContent = 'Clave incorrecta. Inténtalo de nuevo.'; pin.select(); }
+});
 </script>
 </body>
 </html>
